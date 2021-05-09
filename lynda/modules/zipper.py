@@ -1,36 +1,29 @@
-import os
-import time
 import zipfile
-
+import time
+import os
+from lynda.events import register
+from lynda import TEMP_DOWNLOAD_DIRECTORY
+from lynda import client
 from telethon import types
 from telethon.tl import functions
-
-from lynda import TEMP_DOWNLOAD_DIRECTORY
-from lynda import telethn as client
-from lynda.events import register
-
 
 async def is_register_admin(chat, user):
     if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
 
         return isinstance(
-            (
-                await client(functions.channels.GetParticipantRequest(chat, user))
-            ).participant,
-            (types.ChannelParticipantAdmin, types.ChannelParticipantCreator),
+            (await client(functions.channels.GetParticipantRequest(chat, user))).participant,
+            (types.ChannelParticipantAdmin, types.ChannelParticipantCreator)
         )
     if isinstance(chat, types.InputPeerChat):
 
         ui = await client.get_peer_id(user)
-        ps = (
-            await client(functions.messages.GetFullChatRequest(chat.chat_id))
-        ).full_chat.participants.participants
+        ps = (await client(functions.messages.GetFullChatRequest(chat.chat_id))) \
+                .full_chat.participants.participants
         return isinstance(
             next((p for p in ps if p.user_id == ui), None),
-            (types.ChatParticipantAdmin, types.ChatParticipantCreator),
+            (types.ChatParticipantAdmin, types.ChatParticipantCreator)
         )
     return None
-
 
 @register(pattern="^/zip")
 async def _(event):
@@ -39,30 +32,26 @@ async def _(event):
 
     if not event.is_reply:
         await event.reply("Reply to a file to compress it.")
-        return
+        return 
     if event.is_group:
-        if not (await is_register_admin(event.input_chat, event.message.sender_id)):
-            await event.reply(
-                "Hey, You are not admin. You can't use this command, But you can use in my pm 🙂"
-            )
-            return
-
-    mone = await event.reply("⏳️ Please wait...")
+     if not (await is_register_admin(event.input_chat, event.message.sender_id)):
+       await event.reply("Hai.. You are not admin.. You can't use this command.. But you can use in my pm")
+       return
+   
+    mone = await event.reply("`⏳️Please wait...`")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
         reply_message = await event.get_reply_message()
         try:
-            time.time()
+            c_time = time.time()
             downloaded_file_name = await event.client.download_media(
-                reply_message, TEMP_DOWNLOAD_DIRECTORY
-            )
+                reply_message,
+                TEMP_DOWNLOAD_DIRECTORY)
             directory_name = downloaded_file_name
         except Exception as e:  # pylint:disable=C0103,W0703
             await mone.reply(str(e))
-    zipfile.ZipFile(directory_name + ".zip", "w", zipfile.ZIP_DEFLATED).write(
-        directory_name
-    )
+    zipfile.ZipFile(directory_name + '.zip', 'w', zipfile.ZIP_DEFLATED).write(directory_name)
     await event.client.send_file(
         event.chat_id,
         directory_name + ".zip",
@@ -71,7 +60,6 @@ async def _(event):
         reply_to=event.message.id,
     )
 
-
 def zipdir(path, ziph):
     # ziph is zipfile handle
     for root, dirs, files in os.walk(path):
@@ -79,9 +67,7 @@ def zipdir(path, ziph):
             ziph.write(os.path.join(root, file))
             os.remove(os.path.join(root, file))
 
-
 from datetime import datetime
-
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from telethon.tl.types import DocumentAttributeVideo
@@ -121,35 +107,33 @@ async def _(event):
 
     if not event.is_reply:
         await event.reply("Reply to a zip file.")
-        return
+        return 
     if event.is_group:
-        if not (await is_register_admin(event.input_chat, event.message.sender_id)):
-            await event.reply(
-                "Hey, You are not admin. You can't use this command, But you can use in my pm 🙂"
-            )
-            return
+     if not (await is_register_admin(event.input_chat, event.message.sender_id)):
+       await event.reply(" Hai.. You are not admin.. You can't use this command.. But you can use in my pm🙈")
+       return
 
-    mone = await event.reply("Processing...")
+    mone = await event.reply("Processing ...")
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
     if event.reply_to_msg_id:
         start = datetime.now()
         reply_message = await event.get_reply_message()
         try:
-            time.time()
+            c_time = time.time()
             downloaded_file_name = await client.download_media(
                 reply_message, TEMP_DOWNLOAD_DIRECTORY
             )
-        except Exception as e:
+        except Exception as e:  
             await mone.reply(str(e))
         else:
             end = datetime.now()
-            (end - start).seconds
+            ms = (end - start).seconds
 
         with zipfile.ZipFile(downloaded_file_name, "r") as zip_ref:
             zip_ref.extractall(extracted)
         filename = sorted(get_lst_of_files(extracted, []))
-        await event.reply("Unzipping now 😌")
+        await event.reply("Unzipping now")
         for single_file in filename:
             if os.path.exists(single_file):
                 caption_rts = os.path.basename(single_file)
@@ -186,7 +170,7 @@ async def _(event):
                         supports_streaming=supports_streaming,
                         allow_cache=False,
                         reply_to=event.message.id,
-                        attributes=document_attributes,
+                        attributes=document_attributes
                     )
                 except Exception as e:
                     await client.send_message(
@@ -210,9 +194,8 @@ def get_lst_of_files(input_directory, output_lst):
 
 
 __help__ = """
-Hey I can convert files here..
- ❍ /zip*:* reply to a telegram file to compress it in .zip format
- ❍ /unzip*:* reply to a telegram file to decompress it from the .zip format
+ - /zip: reply to a telegram file to compress it in .zip format
+ - /unzip: reply to a telegram file to decompress it from the .zip format
 """
 
-__mod_name__ = "ZIPPER"
+__mod_name__ = "Zipper"
