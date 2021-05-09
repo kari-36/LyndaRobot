@@ -5,9 +5,9 @@ import zipfile
 from telethon import types
 from telethon.tl import functions
 
-from LyndaRobot import TEMP_DOWNLOAD_DIRECTORY
-from LyndaRobot import telethn as client
-from LyndaRobot.events import register
+from lynda import TEMP_DOWNLOAD_DIRECTORY
+from lynda import telethn as client
+from lynda.events import register
 
 
 async def is_register_admin(chat, user):
