@@ -3,7 +3,7 @@ import time
 import os
 from lynda.events import register
 from lynda import TEMP_DOWNLOAD_DIRECTORY
-from lynda import client
+from lynda import telethn as client
 from telethon import types
 from telethon.tl import functions
 
