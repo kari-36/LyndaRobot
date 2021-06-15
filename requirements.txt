@@ -33,3 +33,4 @@ py-cpuinfo
 nekos.py
 spamwatch
 telethon
+hachoir
