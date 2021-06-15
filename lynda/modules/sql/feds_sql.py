@@ -1,7 +1,7 @@
 import threading
 
-from tg_bot import dispatcher
-from tg_bot.modules.sql import BASE, SESSION
+from lynda import dispatcher
+from lynda.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
 from telegram.error import BadRequest, Unauthorized
 
