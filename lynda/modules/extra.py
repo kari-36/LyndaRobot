@@ -468,11 +468,12 @@ returns what you're scrobbling on last.fm.
 finds an app in playstore for you
 
 ──「 *Zipper:* 」──
- -> `/zip` reply to a telegram file to compress it in .zip format
- -> `/unzip reply to a telegram file to decompress it from the .zip format
+ -> `/zip`
+ reply to a telegram file to compress it in .zip format
+ -> `/unzip
+ reply to a telegram file to decompress it from the .zip format
 """
 
-"""
 APP_HANDLER = DisableAbleCommandHandler("app", app)
 UD_HANDLER = DisableAbleCommandHandler("ud", ud)
 COVID_HANDLER = DisableAbleCommandHandler(["covid", "corona"], covid)
