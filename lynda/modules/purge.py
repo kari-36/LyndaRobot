@@ -2,7 +2,7 @@ import time
 from telethon import events
 
 from lynda.services.client import client as telethn
-from lynda.modules.helper_funcs.chatstatus import (
+from lynda.modules.helper_funcs.telethn.chatstatus import (
     can_delete_messages,
     user_is_admin,
 )
