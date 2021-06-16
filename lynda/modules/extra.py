@@ -474,6 +474,8 @@ finds an app in playstore for you
  reply to a telegram file to decompress it from the .zip format
 """
 
+ZIP_HANDLER = DisableAbleCommandHandler("zip", zip)
+UNZIP_HANDLER = DisableAbleCommandHandler("unzip", unzip)
 APP_HANDLER = DisableAbleCommandHandler("app", app)
 UD_HANDLER = DisableAbleCommandHandler("ud", ud)
 COVID_HANDLER = DisableAbleCommandHandler(["covid", "corona"], covid)
@@ -483,6 +485,8 @@ REVERSE_HANDLER = DisableAbleCommandHandler(
     "reverse", reverse, pass_args=True, admin_ok=True)
 TTS_HANDLER = DisableAbleCommandHandler('tts', tts, pass_args=True)
 
+dispatcher.add_handler(ZIP_HANDLER)
+dispatcher.add_handler(UNZIP_HANDLER)
 dispatcher.add_handler(APP_HANDLER)
 dispatcher.add_handler(COVID_HANDLER)
 dispatcher.add_handler(REVERSE_HANDLER)
@@ -500,7 +504,9 @@ __command_list__ = [
     "corona",
     "tts",
     "ud",
-    "app"]
+    "app"
+    "zip"
+    "unzip"]
 __handlers__ = [
     CONVERTER_HANDLER,
     WALL_HANDLER,
@@ -508,4 +514,6 @@ __handlers__ = [
     COVID_HANDLER,
     TTS_HANDLER,
     UD_HANDLER,
-    APP_HANDLER]
+    APP_HANDLER,
+    ZIP_HANDLER
+    UNZIP_HANDLER]
