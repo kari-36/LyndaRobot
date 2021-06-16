@@ -34,3 +34,4 @@ nekos.py
 spamwatch
 telethon
 hachoir
+envparse
