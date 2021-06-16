@@ -33,7 +33,7 @@ def banme(update: Update, context: CallbackContext):
         response_message = "lmao have a load of ban UwU!"
     except Exception as e:
         print(e)
-        response_message = "Ohno! something is not right please contact @LyndaEagleSupport"
+        response_message = "Ohno! something is not right please contact @EagleUnions"
     message.reply_text(response_message)
 
 
