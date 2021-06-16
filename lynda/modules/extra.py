@@ -504,8 +504,8 @@ __command_list__ = [
     "corona",
     "tts",
     "ud",
-    "app"
-    "zip"
+    "app",
+    "zip",
     "unzip"]
 __handlers__ = [
     CONVERTER_HANDLER,
@@ -515,5 +515,5 @@ __handlers__ = [
     TTS_HANDLER,
     UD_HANDLER,
     APP_HANDLER,
-    ZIP_HANDLER
+    ZIP_HANDLER,
     UNZIP_HANDLER]
