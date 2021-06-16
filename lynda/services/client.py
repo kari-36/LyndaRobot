@@ -16,7 +16,7 @@
 
 from telethon import TelegramClient
 
-from lynda.services import get_int_key, get_str_key
+from lynda.services.str_key import get_int_key, get_str_key
 
 TOKEN = get_str_key("TOKEN", required=True)
 NAME = TOKEN.split(":")[0]
