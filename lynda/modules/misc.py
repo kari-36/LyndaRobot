@@ -148,17 +148,17 @@ def info(update: Update, context: CallbackContext):
 
 
     if user.id == OWNER_ID:
-            text += f'\nThe Nation level of this person is <a href="https://t.me/lyndarobot?start=nations">God</a>'
+            text += f'\nThe Nation level of this person is <a href="https://t.me/lynda_robot?start=nations">God</a>'
     elif user.id in DEV_USERS:
-            text += f'\nThe Nation level of this person is <a href="https://t.me/lyndarobot?start=nations">Hero Union</a>'
+            text += f'\nThe Nation level of this person is <a href="https://t.me/lynda_robot?start=nations">Hero Union</a>'
     elif user.id in SUDO_USERS:
-            text += f'\nThe Nation level of this person is <a href="https://t.me/lyndarobot?start=nations">Royal</a>'
+            text += f'\nThe Nation level of this person is <a href="https://t.me/lynda_robot?start=nations">Royal</a>'
     elif user.id in SUPPORT_USERS:
-            text += f'\nThe Nation level of this person is <a href="https://t.me/lyndarobot?start=nations">Sakura</a>'
+            text += f'\nThe Nation level of this person is <a href="https://t.me/lynda_robot?start=nations">Sakura</a>'
     elif user.id in SARDEGNA_USERS:
-            text += f'\nThe Nation level of this person is <a href="https://t.me/lyndarobot?start=nations">Sardegna</a>'
+            text += f'\nThe Nation level of this person is <a href="https://t.me/lynda_robot?start=nations">Sardegna</a>'
     elif user.id in WHITELIST_USERS:
-            text += f'\nThe Nation level of this person is <a href="https://t.me/lyndarobot?start=nations">Neptunia</a>'
+            text += f'\nThe Nation level of this person is <a href="https://t.me/lynda_robot?start=nations">Neptunia</a>'
 
 
     text += "\n"
