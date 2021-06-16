@@ -21,10 +21,10 @@ Hi {}, my name is {}!
 // I am an Anime themed group management bot with a lot of Special Features.
 You can find the list of available commands with /help.
 ==========================
--> [Lynda's Repo](https://waa.ai/Lynda)
--> Report [Lynda Support](https://t.me/LyndaEagleSupport) if I go offline
+-> [Lynda's Repo](https://waa.ai/kigyo)
+-> Report [Lynda Support](https://t.me/EagleUnions) if I go offline
 ==========================
-`Maintained by` @YorktownEagleUnion
+`Maintained by` @EagleUnionElizaSupport
 
 """
 
@@ -33,7 +33,7 @@ Hey there! My name is *{}*.
 I'm a part of Eagle Union.
 Have a look at the following for an idea of some of \
 the things I can help you with.
-I'm managed by [Poki](https://t.me/pokurt)
+I'm managed by [Poki](https://t.me/slient_boy)
 Chatbot module from [TheRealPhoenixBot](https://github.com/rsktg/TheRealPhoenixBot.git)
 Disaster module from [SaitamaRobot](https://github.com/AnimeKaizoku/SaitamaRobot)
 *Main* commands available:
@@ -146,11 +146,11 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             buttons = InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="👥 Add Lynda to your group", url="https://t.me/LyndaRobot?startgroup=new")],
-                [InlineKeyboardButton(text="🙋 Support Group", url="https://t.me/LyndaEagleSupport"),
-                InlineKeyboardButton(text="🚫 Global Logs", url="https://t.me/LyndaGLogs")],
-                [InlineKeyboardButton(text="❔ Help", url="https://t.me/LyndaRobot?start=help"),
-                InlineKeyboardButton(text="🔔 Update Channel", url="https://t.me/LyndaUpdateLogs")]])
+                [[InlineKeyboardButton(text="👥 Add Lynda to your group", url="https://t.me/Lynda_Robot?startgroup=new")],
+                [InlineKeyboardButton(text="🙋 Support Group", url="https://t.me/EagleUnions"),
+                InlineKeyboardButton(text="🚫 Global Logs", url="https://t.me/LyndaeagleGlogs")],
+                [InlineKeyboardButton(text="❔ Help", url="https://t.me/Lynda_Robot?start=help"),
+                InlineKeyboardButton(text="🔔 Update Channel", url="https://t.me/LyndaUpdatesLogs")]])
             update.effective_message.reply_photo(
                 LYNDA_IMG,
                 PM_START_TEXT.format(
