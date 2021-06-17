@@ -106,7 +106,7 @@ def chats(update: Update, _):
 
 
 def __stats__():
-    return f"<b>{sql.num_users()} users, across {sql.num_chats()} chats"</b>
+    return f"<b>{sql.num_users()} users, across {sql.num_chats()} chats</b>"
 
 
 def __migrate__(old_chat_id, new_chat_id):
