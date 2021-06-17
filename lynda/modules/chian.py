@@ -6,7 +6,8 @@ from telethon.tl.functions.messages import SaveDraftRequest
 
 from telethon import events
 from lynda.services.client import client
-
+from lynda import CMD_HELP
+from lynda.cmdhelp import
 
 @client.on(events.NewMessage(pattern="^/chain (.*)"))
 async def _(event):
