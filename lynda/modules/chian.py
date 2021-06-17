@@ -8,7 +8,7 @@ from telethon import events
 from lynda.services.client import client
 
 
-@client.on(events.NewMessage(pattern="^/chian (.*)"))
+@client.on(events.NewMessage(pattern="^/chain (.*)"))
 async def _(event):
     if event.fwd_from:
         return
