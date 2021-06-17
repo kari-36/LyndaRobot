@@ -8,6 +8,13 @@ import spamwatch
 from telethon import TelegramClient
 
 StartTime = time.time()
+CMD_LIST = {}
+# for later purposes
+CMD_HELP = {}
+CMD_HELP_BOT = {}
+BRAIN_CHECKER = []
+INT_PLUG = ""
+LOAD_PLUG = {}
 
 # enable logging
 logging.basicConfig(
