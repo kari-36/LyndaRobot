@@ -4,11 +4,11 @@
 
 from telethon.tl.functions.messages import SaveDraftRequest
 
-From telethon import event
-From lynda.services.client import client
+from telethon import event
+from lynda.services.client import client
 
 
-@client.on(events.NewMessage(pattern="^/book (.*)"))
+@client.on(events.NewMessage(pattern="^/chian (.*)"))
 async def _(event):
     if event.fwd_from:
         return
