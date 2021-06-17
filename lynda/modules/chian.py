@@ -4,7 +4,7 @@
 
 from telethon.tl.functions.messages import SaveDraftRequest
 
-from telethon import event
+from lynda.event import 
 from lynda.services.client import client
 
 
