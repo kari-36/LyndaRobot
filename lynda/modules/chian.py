@@ -5,10 +5,10 @@
 from telethon.tl.functions.messages import SaveDraftRequest
 
 from telethon import events
-from lynda.services.client import client
+from lynda.services.client import client as tbot
 from lynda import CMD_HELP
 
-@client.on(events.NewMessage(pattern="^/chain (.*)"))
+@tbot.on(events.NewMessage(pattern="^/chain (.*)"))
 async def _(event):
     if event.fwd_from:
         return
