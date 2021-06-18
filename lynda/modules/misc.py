@@ -223,7 +223,12 @@ def stats(update: Update, _):
     result = re.sub(r'(\d+)', r'<code>\1</code>', stats)
     r = requests.get("https://api.waa.ai/v2/links/Lynda").json()
     update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
-
+    kb = [
+          [
+           InlineKeyboardButton('Channel', url='t.me/up'),
+           InlineKeyboardButton('Support', url='t.me/YorktownEagleUnion')
+          ]
+    ]
 
 __help__ = """
 -> `/id`
