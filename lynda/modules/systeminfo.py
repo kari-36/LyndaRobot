@@ -6,11 +6,11 @@ from datetime import datetime
 from platform import python_version, uname
 from telegram import Update, Bot, Message, Chat, ParseMode ,InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CommandHandler, run_async , CallbackQueryHandler
-from tg_bot.modules.helper_funcs.chat_status import whitelist_plus, dev_plus
-import tg_bot.modules.helper_funcs.git_api as git
-from tg_bot.modules.disable import DisableAbleCommandHandler
-from tg_bot import dispatcher ,DEV_USERS
-from tg_bot.modules.helper_funcs.filters import CustomFilters
+from lynda.modules.helper_funcs.chat_status import whitelist_plus, dev_plus
+import lynda.modules.helper_funcs.git_api as git
+from lynda.modules.disable import DisableAbleCommandHandler
+from lynda import dispatcher ,DEV_USERS
+from lynda.modules.helper_funcs.filters import CustomFilters
 
 
 @dev_plus
