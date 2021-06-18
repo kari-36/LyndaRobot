@@ -7,7 +7,6 @@ from telethon.tl.functions.messages import SaveDraftRequest
 from telethon import events
 from lynda.services.client import client
 from lynda import CMD_HELP
-from lynda.cmdhelp import cmdhelp
 
 @client.on(events.NewMessage(pattern="^/chain (.*)"))
 async def _(event):
@@ -29,6 +28,3 @@ async def _(event):
     await event.edit(f"Chain length: {count}")
 
 
-CmdHelp("chain").add_command(
-  'chain', 'Reply to a message', 'Reply this command to any msg so that it finds chain length of that msg'
-).add()
