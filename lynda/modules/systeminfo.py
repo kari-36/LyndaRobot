@@ -5,7 +5,7 @@ import platform
 from datetime import datetime
 from platform import python_version, uname
 from telegram import Update, Bot, Message, Chat, ParseMode ,InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.ext import CommandHandler, run_async , CallbackQueryHandler
+from telegram.ext import CommandHandler, run_async , CallbackQueryHandler, CallbackContext
 from lynda.modules.helper_funcs.chat_status import whitelist_plus, dev_plus
 import lynda.modules.helper_funcs.git_api as git
 from lynda.modules.disable import DisableAbleCommandHandler
