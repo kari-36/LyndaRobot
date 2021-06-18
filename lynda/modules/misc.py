@@ -223,7 +223,8 @@ def stats(update: Update, _):
     stats = "  ⌈ <b>Current Lynda Stats</b> ⌋\n \n" + "\n".join(mod.__stats__() for mod in STATS)
     result = re.sub(r'(\d+)', r'<code>\1</code>', stats)
     r = requests.get("https://api.waa.ai/v2/links/Lynda").json()
-    update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)\n
+    update.effective_message.reply_text (result, parse_mode=ParseMode.HTML)
+
     kb = [
           [
            InlineKeyboardButton('Channel', url='t.me/KigyoUpdates'),
