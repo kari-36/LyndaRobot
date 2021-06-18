@@ -219,7 +219,7 @@ def markdown_help(update: Update, _):
 @run_async
 @sudo_plus
 def stats(update: Update, _):
-    stats = "  ⌈ <b>Current Lynda Stats</b> ⌋\n \n" + "\n \n".join(mod.__stats__() for mod in STATS)
+    stats = "  ⌈ <b>Current Lynda Stats</b> ⌋\n \n" + "\n".join(mod.__stats__() for mod in STATS)
     result = re.sub(r'(\d+)', r'<code>\1</code>', stats)
     r = requests.get("https://api.waa.ai/v2/links/Lynda").json()
     update.effective_message.reply_text(result, parse_mode=ParseMode.HTML)
