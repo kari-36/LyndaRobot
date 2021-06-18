@@ -15,7 +15,7 @@ from lynda.modules.disable import DisableAbleCommandHandler
 from lynda.modules.helper_funcs.chat_status import user_admin, sudo_plus
 from lynda.modules.helper_funcs.extraction import extract_user
 import lynda.modules.sql.users_sql as sql
-from telegram import __version__ as ptbver, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram import  ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
 
 MARKDOWN_HELP = f"""
 Markdown is a very powerful formatting tool supported by telegram. {dispatcher.bot.first_name} has some enhancements, to make sure that \
