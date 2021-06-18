@@ -12,7 +12,7 @@ from lynda import CMD_HELP
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("Counting...")
+    await event.reply("Counting...")
     count = -1
     message = event.message
     while message:
@@ -25,6 +25,6 @@ async def _(event):
             )
         message = reply
         count += 1
-    await event.edit(f"Chain length: {count}")
+    await event.reply(f"Chain length: {count}")
 
 
