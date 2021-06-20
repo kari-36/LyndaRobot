@@ -159,13 +159,7 @@ def gban(update: Update, context: CallbackContext):
            InlineKeyboardButton('Channel', url='t.me/KigyoUpdates'),
            InlineKeyboardButton('Support', url='t.me/YorktownEagleUnion')
           ]
-    ]/n"
-
-    if reason:
-        if chat.type == chat.SUPERGROUP and chat.username:
-            log_message += f"\n<b>Reason:</b> <a href=\"http://telegram.me/{chat.username}/{message.message_id}\">{reason}</a>"
-        else:
-            log_message += f"\n<b>Reason:</b> {reason}"
+    ]
 
     if GBAN_LOGS:
         try:
