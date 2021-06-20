@@ -159,10 +159,9 @@ def gban(update: Update, context: CallbackContext):
            InlineKeyboardButton('Channel', url='t.me/KigyoUpdates'),
            InlineKeyboardButton('Support', url='t.me/YorktownEagleUnion')
           ]
-    ]
+   ]
 
-if GBAN_LOGS:
-         try:
+
             log = bot.send_message(
                 GBAN_LOGS, log_message, parse_mode=ParseMode.HTML)
         except BadRequest as e:
