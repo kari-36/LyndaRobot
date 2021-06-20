@@ -153,7 +153,13 @@ def gban(update: Update, context: CallbackContext):
         f"<b>Admin:</b> {mention_html(user.id, user.first_name)}\n"
         f"<b>Banned User:</b> {mention_html(user_chat.id, user_chat.first_name)}\n"
         f"<b>Banned User ID:</b> {user_chat.id}\n"
-        f"<b>Event Stamp:</b> {current_time}")
+        f"<b>Event Stamp:</b> {current_time}\n"
+            kb = [
+          [
+           InlineKeyboardButton('Channel', url='t.me/KigyoUpdates'),
+           InlineKeyboardButton('Support', url='t.me/YorktownEagleUnion')
+          ]
+    ]
 
     if reason:
         if chat.type == chat.SUPERGROUP and chat.username:
