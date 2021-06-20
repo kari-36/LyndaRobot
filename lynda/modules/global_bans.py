@@ -161,7 +161,8 @@ def gban(update: Update, context: CallbackContext):
           ]
     ]
 
-       try:
+if GBAN_LOGS:
+         try:
             log = bot.send_message(
                 GBAN_LOGS, log_message, parse_mode=ParseMode.HTML)
         except BadRequest as e:
