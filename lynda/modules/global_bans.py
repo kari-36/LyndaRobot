@@ -159,7 +159,7 @@ def gban(update: Update, context: CallbackContext):
            InlineKeyboardButton('Channel', url='t.me/KigyoUpdates'),
            InlineKeyboardButton('Support', url='t.me/YorktownEagleUnion')
           ]
-    ]
+    ]/n"
 
     if reason:
         if chat.type == chat.SUPERGROUP and chat.username:
