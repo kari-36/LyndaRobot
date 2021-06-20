@@ -154,7 +154,7 @@ def gban(update: Update, context: CallbackContext):
         f"<b>Banned User:</b> {mention_html(user_chat.id, user_chat.first_name)}\n"
         f"<b>Banned User ID:</b> {user_chat.id}\n"
         f"<b>Event Stamp:</b> {current_time}\n"
-            kb = [
+         [
           [
            InlineKeyboardButton('Channel', url='t.me/KigyoUpdates'),
            InlineKeyboardButton('Support', url='t.me/YorktownEagleUnion')
